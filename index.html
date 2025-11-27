@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/mais_bela.jpg" type="image/jpg" />
+    <title>Mais Bela - Agende seu Horário</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <i class="fas fa-spa"></i>
+            <span>Mais Bela</span>
+          </div>
+          <div class="nav-links">
+            <a href="#servicos">Serviços</a>
+            <a href="#agendamento">Agendar</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Cuide das suas unhas com carinho e profissionalismo</h1>
+        <p>
+          Agende seu horário e tenha uma experiência única de beleza e bem-estar
+        </p>
+        <a href="#agendamento" class="btn">Agendar Horário</a>
+      </div>
+    </section>
+
+    <section id="servicos" class="servicos">
+      <div class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="servicos-grid">
+          <div class="servico-card">
+            <i class="fas fa-hand-sparkles"></i>
+            <h3>Manicure</h3>
+            <p>Cuidados completos para suas mãos, com esmaltação perfeita.</p>
+          </div>
+          <div class="servico-card">
+            <i class="fas fa-shoe-prints"></i>
+            <h3>Pedicure</h3>
+            <p>
+              Tratamento especial para seus pés, deixando-os macios e bonitos.
+            </p>
+          </div>
+          <div class="servico-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Design Especial</h3>
+            <p>
+              Arte personalizada para deixar suas unhas únicas e cheias de
+              estilo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="agendamento" class="agendamento">
+      <div class="container">
+        <h2 class="section-title">Agende seu Horário</h2>
+        <div class="calendario-container">
+          <div class="calendario-header">
+            <div class="mes-ano">Junho 2023</div>
+            <div class="navegacao-calendario">
+              <button id="prev-month">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button id="next-month">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="dias-semana">
+            <div>Dom</div>
+            <div>Seg</div>
+            <div>Ter</div>
+            <div>Qua</div>
+            <div>Qui</div>
+            <div>Sex</div>
+            <div>Sáb</div>
+          </div>
+          <div class="dias-calendario" id="calendario"></div>
+
+          <div class="horarios" id="horarios-container" style="display: none">
+            <h3>Horários Disponíveis</h3>
+            <div class="lista-horarios" id="lista-horarios"></div>
+          </div>
+
+          <div class="form-agendamento" id="form-agendamento">
+            <h3>Finalizar Agendamento</h3>
+            <form id="agendamento-form">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" required />
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" required />
+              </div>
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="tel" id="endereco" required />
+              </div>
+              <div class="form-group">
+                <label for="servico">Serviço Desejado</label>
+                <select id="servico" required>
+                  <option value="">Selecione um serviço</option>
+                  <option value="manicure">Manicure</option>
+                  <option value="pedicure">Pedicure</option>
+                  <option value="design">Design Especial</option>
+                </select>
+              </div>
+              <button type="submit" class="btn">Confirmar Agendamento</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="sobre-content">
+          <div class="sobre-img">
+            <img
+              background-image:
+              src="/images/mais_bela_picture.jpg"
+              alt="Foto Marcella"
+              style="width: 100%; height: auto; border-radius: 10px"
+            />
+          </div>
+          <div class="sobre-texto">
+            <h2>Olá, eu sou a Marcella!</h2>
+            <p>
+              Sou especialista em cuidados com as unhas há mais de 3 anos. Minha
+              paixão é realçar a beleza natural de cada cliente, proporcionando
+              não apenas um serviço de qualidade, mas uma experiência relaxante
+              e revigorante.
+            </p>
+            <p>
+              Em sua casa, priorizo a higiene, uso produtos de alta qualidade e
+              me mantenho sempre atualizada com as últimas tendências e técnicas
+              do mercado.
+            </p>
+            <p>
+              Meu objetivo é fazer com que cada cliente se senta única, mais
+              confiante e bonita!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contato">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <h3>Studio de Beleza</h3>
+            <p>Cuidando da sua beleza com carinho e profissionalismo.</p>
+            <div class="redes-sociais">
+              <a href="https://www.instagram.com/m4is_bela/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://wa.me/5583987483877?text=Quero%20saber%20mais%20sobre%20seu%20trabalho%20"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#agendamento">Agendar Horário</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contato</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Natanael Barbosa, 140
+              </li>
+              <li><i class="fas fa-phone"></i> (83) 98748-3877</li>
+              <li><i class="fas fa-envelope"></i> virginiaella83@gmail.com</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Horário de Funcionamento</h3>
+            <ul>
+              <li>Segunda a Sexta: 8h às 17h</li>
+              <li>Sábado: 8h às 17h</li>
+              <li>Domingo: 13 às 16</li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Mais bela. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="notificacao" id="notificacao">
+      Agendamento realizado com sucesso! Você receberá uma confirmação por
+      e-mail.
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
