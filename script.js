@@ -25,6 +25,142 @@ const configuracao = {
   },
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carrossel-track");
+  const cards = document.querySelectorAll(".trabalho-card");
+  const prevBtn = document.querySelector(".carrossel-btn.prev");
+  const nextBtn = document.querySelector(".carrossel-btn.next");
+  const indicadoresContainer = document.querySelector(".carrossel-indicadores");
+
+  let currentIndex = 0;
+  const cardsPerView = getCardsPerView();
+
+  cards.forEach((_, index) => {
+    const indicador = document.createElement("button");
+    indicador.className = "indicador";
+    if (index === 0) indicador.classList.add("ativo");
+    indicador.addEventListener("click", () => goToSlide(index));
+    indicadoresContainer.appendChild(indicador);
+  });
+
+  function getCardsPerView() {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function updateCarrossel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const translateX = -currentIndex * cardWidth;
+    track.style.transform = `translateX(${translateX}px)`;
+
+    document.querySelectorAll(".indicador").forEach((ind, index) => {
+      ind.classList.toggle("ativo", index === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarrossel();
+  }
+
+  function nextSlide() {
+    const maxIndex = cards.length - getCardsPerView();
+    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    updateCarrossel();
+  }
+
+  function prevSlide() {
+    const maxIndex = cards.length - getCardsPerView();
+    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    updateCarrossel();
+  }
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  window.addEventListener("resize", function () {
+    currentIndex = 0;
+    updateCarrossel();
+  });
+
+  const modal = document.getElementById("modal-trabalho");
+  const imagemModal = document.getElementById("imagem-modal");
+  const fecharModal = document.getElementById("fechar-modal");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const imagemSrc = this.querySelector("img").src;
+      const imagemAlt = this.querySelector("img").alt;
+
+      imagemModal.src = imagemSrc;
+      imagemModal.alt = imagemAlt;
+      modal.classList.add("ativo");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  fecharModal.addEventListener("click", function () {
+    modal.classList.remove("ativo");
+    document.body.style.overflow = "auto";
+  });
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.classList.remove("ativo");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("ativo")) {
+      modal.classList.remove("ativo");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  updateCarrossel();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const trabalhoCards = document.querySelectorAll(".trabalho-card");
+  const modal = document.getElementById("modal-trabalho");
+  const imagemModal = document.getElementById("imagem-modal");
+  const fecharModal = document.getElementById("fechar-modal");
+
+  trabalhoCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const imagemSrc = this.querySelector("img").src;
+      const imagemAlt = this.querySelector("img").alt;
+
+      imagemModal.src = imagemSrc;
+      imagemModal.alt = imagemAlt;
+      modal.classList.add("ativo");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  fecharModal.addEventListener("click", function () {
+    modal.classList.remove("ativo");
+    document.body.style.overflow = "auto";
+  });
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.classList.remove("ativo");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("ativo")) {
+      modal.classList.remove("ativo");
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+
 function formatarDataParaChave(data) {
   return data.toISOString().split("T")[0];
 }

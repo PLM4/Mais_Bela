@@ -24,6 +24,7 @@
             <a href="#agendamento">Agendar</a>
             <a href="#sobre">Sobre</a>
             <a href="#contato">Contato</a>
+            <a href="#trabalhos">Trabalhos</a>
           </div>
         </nav>
       </div>
@@ -111,7 +112,7 @@
               </div>
               <div class="form-group">
                 <label for="endereco">Endereço</label>
-                <input type="tel" id="endereco" required />
+                <input type="text" id="endereco" required />
               </div>
               <div class="form-group">
                 <label for="servico">Serviço Desejado</label>
@@ -125,6 +126,47 @@
               <button type="submit" class="btn">Confirmar Agendamento</button>
             </form>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabalhos" class="trabalhos">
+      <div class="container">
+        <h2 class="section-title">Trabalhos</h2>
+
+        <div class="carrossel-container">
+          <button class="carrossel-btn prev">&#10094;</button>
+          <button class="carrossel-btn next">&#10095;</button>
+
+          <div class="carrossel-track">
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0021.jpg" alt="Trabalho 1" />
+            </div>
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0023.jpg" alt="Trabalho 2" />
+            </div>
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0026.jpg" alt="Trabalho 3" />
+            </div>
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0027.jpg" alt="Trabalho 4" />
+            </div>
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0028.jpg" alt="Trabalho 5" />
+            </div>
+            <div class="trabalho-card">
+              <img src="/images/IMG-20251128-WA0031.jpg" alt="Trabalho 6" />
+            </div>
+          </div>
+        </div>
+
+        <div class="carrossel-indicadores"></div>
+      </div>
+
+      <div class="modal-trabalho" id="modal-trabalho">
+        <div class="modal-conteudo">
+          <button class="fechar-modal" id="fechar-modal">&times;</button>
+          <img id="imagem-modal" src="" alt="Trabalho em detalhes" />
         </div>
       </div>
     </section>
@@ -185,7 +227,7 @@
               <li><a href="#servicos">Serviços</a></li>
               <li><a href="#agendamento">Agendar Horário</a></li>
               <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#trabalhos">Trabalhos</a></li>
             </ul>
           </div>
           <div class="footer-col">
